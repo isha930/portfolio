@@ -49,14 +49,14 @@ export function useToast() {
 }
 
 // Export a singleton version of useToast for import by name
-export const toast = {
-  // Create standalone toast function
-  toast: (props: Omit<ToastProps, "id">) => {
-    // This is just a placeholder for direct imports
-    // The actual implementation is handled by the useToast hook
-    console.log("Toast called outside of component context");
-    return "";
-  }
-}.toast;
+export const toast = function(props: Omit<ToastProps, "id">) {
+  // This is just a placeholder for direct imports
+  // The actual implementation is handled by the useToast hook
+  console.log("Toast called outside of component context");
+  
+  // Implementation would typically dispatch an event to a global toast handler
+  const id = Math.random().toString(36).slice(2);
+  return id;
+};
 
 export default useToast;

@@ -15,7 +15,13 @@ import {
   Briefcase,
   GraduationCap,
   Heart,
-  Users
+  Users,
+  Sparkles,
+  Coffee,
+  Zap,
+  Rocket,
+  Star,
+  LucideIcon
 } from "lucide-react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -356,7 +362,7 @@ const Index = () => {
               </a>
               <a href="#projects">
                 <Button variant="outline" className="border-purple-500 text-white hover:bg-purple-950">
-                  View My Work
+                  View My Work <ChevronDown className="ml-1 h-4 w-4" />
                 </Button>
               </a>
             </div>
@@ -387,13 +393,13 @@ const Index = () => {
           </h2>
           <div className="max-w-3xl mx-auto bg-purple-900/20 backdrop-blur-sm p-8 rounded-xl border border-purple-500/20">
             <p className="text-lg mb-6">
-              Hey there! I'm Isha, a Full Stack Developer with a passion for building beautiful, functional web applications that make people's lives easier (and occasionally more entertaining). 
+              Oh, you know, just the usual—building and scaling full-stack applications, optimizing real-time systems, and integrating AI like a pro. 🚀 From handling 1,000+ concurrent users in a code editor to designing ultra-responsive APIs, I focus on performance, scalability, and seamless UX. 💻
             </p>
             <p className="text-lg mb-6">
-              I consider myself a code-poet who writes elegant solutions by day and debugs mysterious errors by night. When I'm not staring at a screen wondering why my code works (or doesn't), I'm probably exploring new technologies or explaining to my friends why tabs are superior to spaces.
+              I consider myself a code-poet who writes elegant solutions by day and debugs mysterious errors by night. ☕ When I'm not staring at a screen wondering why my code works (or doesn't), I'm probably exploring new technologies or explaining to my friends why tabs are superior to spaces. 🤓
             </p>
             <p className="text-lg">
-              With expertise in both frontend magic (React, JavaScript, CSS wizardry) and backend sorcery (Node.js, databases, API architecture), I bridge the gap between design and functionality to create seamless digital experiences that users love. Let's build something amazing together!
+              Beyond tech, I've dedicated 240+ hours to community service, mobilized awareness programs for 3,000+ people, and managed large-scale events—sharpening my communication, leadership, and problem-solving skills along the way. ✨ Let's build something amazing together! 🔥
             </p>
           </div>
         </div>
@@ -460,7 +466,7 @@ const Index = () => {
                   </div>
                   <div className="w-full bg-purple-900/50 rounded-full h-2.5">
                     <div 
-                      className="bg-gradient-to-r from-violet-500 to-fuchsia-500 h-2.5 rounded-full group-hover:animate-pulse"
+                      className="bg-gradient-to-r from-violet-500 to-fuchsia-500 h-2.5 rounded-full"
                       style={{ width: `${skill.level}%` }}
                     ></div>
                   </div>
@@ -582,15 +588,15 @@ const Index = () => {
               </div>
               
               <div className="mt-8">
-                <h4 className="text-xl font-semibold mb-4">Let's create something amazing together!</h4>
+                <h4 className="text-xl font-semibold mb-4">Let's create something amazing together! ✨</h4>
                 <p className="text-gray-300">
-                  I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision.
+                  I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision. 🚀
                 </p>
               </div>
             </div>
             
             <div className="bg-purple-900/20 backdrop-blur-sm p-8 rounded-xl border border-purple-500/20">
-              <h3 className="text-2xl font-bold mb-6">Send Me a Message</h3>
+              <h3 className="text-2xl font-bold mb-6">Send Me a Message 📩</h3>
               <form onSubmit={handleSubmit}>
                 <div className="space-y-4">
                   <div>
@@ -632,7 +638,7 @@ const Index = () => {
                     className="w-full bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-700 hover:to-fuchsia-700"
                     disabled={isSubmitting}
                   >
-                    {isSubmitting ? "Sending..." : "Send Message"}
+                    {isSubmitting ? "Sending..." : "Send Message ✉️"}
                   </Button>
                 </div>
               </form>

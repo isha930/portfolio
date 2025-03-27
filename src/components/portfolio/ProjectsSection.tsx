@@ -8,37 +8,40 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 const projects = [
   {
     title: "Interactive Code Editor",
-    description: "A real-time code editor that allows users to write, edit, and preview HTML, CSS, and JavaScript code instantly.",
+    description: "A collaborative real-time code editor supporting multiple programming languages with persistent session storage.",
     image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop",
     demoLink: "https://code-editor-five-black.vercel.app/",
     githubLink: "#",
-    technologies: ["React", "CodeMirror", "JavaScript"]
+    technologies: ["React.js", "Node.js", "CodeMirror"]
   },
   {
     title: "AI-Powered Trip Planner",
-    description: "An intelligent travel planner that leverages AI to generate personalized trip itineraries based on user preferences.",
+    description: "An intelligent travel planner generating personalized itineraries with Azure Maps and Bing APIs integration.",
     image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
     demoLink: "https://ai-trip-generator-psi.vercel.app/",
     githubLink: "#",
-    technologies: ["Next.js", "OpenAI API", "TailwindCSS"]
+    technologies: ["React.js", "Node.js", "Azure Maps", "Bing APIs", "Firebase"]
   },
   {
     title: "Real-Time Chat Application",
-    description: "A full-featured chat platform with real-time messaging, user authentication, and message history.",
+    description: "A scalable messaging platform supporting real-time chat with WebSocket and secure JWT authentication.",
     image: "https://images.unsplash.com/photo-1611606063065-ee7946f0787a?q=80&w=2070&auto=format&fit=crop",
     demoLink: "https://pern-chat-app-frontend-3byh.onrender.com/login",
     githubLink: "#",
-    technologies: ["PostgreSQL", "Express", "React", "Node.js", "Socket.io"]
+    technologies: ["Node.js", "Express.js", "WebSocket", "PostgreSQL"]
   },
   {
-    title: "E-Commerce Bookstore",
-    description: "A comprehensive online bookstore with product listings, search functionality, shopping cart, and checkout process.",
+    title: "E-Commerce Bookstore Platform",
+    description: "A full-stack commerce solution handling 100+ books, featuring search, authentication, and cart functionality.",
     image: "https://images.unsplash.com/photo-1532012197267-da84d127e765?q=80&w=1974&auto=format&fit=crop",
     demoLink: "https://book-store-psi-five.vercel.app/",
     githubLink: "#",
-    technologies: ["React", "Redux", "Firebase", "Stripe API"]
+    technologies: ["React.js", "Node.js", "PostgreSQL", "Google Books API"]
   }
 ];
+
+
+
 
 const ProjectsSection = () => {
   return (

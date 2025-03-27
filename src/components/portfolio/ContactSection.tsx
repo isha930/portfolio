@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Mail, Globe, Linkedin, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -6,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/hooks/use-toast";
+import emailjs from "@emailjs/browser";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -28,19 +28,34 @@ const ContactSection = () => {
     }
     
     setIsSubmitting(true);
-    
-    // Simulate sending email
-    setTimeout(() => {
-      console.log("Form submitted:", formData);
+
+    try {
+      const response = await emailjs.send(
+        "service_br3o7d4", 
+        "template_nctl5bs", 
+        formData, 
+        "PZGchh0HvZL_m_zHG"
+      );
+
+      if (response.status === 200) {
+        toast({
+          title: "Success!",
+          description: "Your message has been sent successfully!",
+        });
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        throw new Error("Failed to send message");
+      }
+    } catch (error) {
+      console.error("Email sending error:", error);
       toast({
-        title: "Success!",
-        description: "Your message has been sent successfully!",
+        title: "Error",
+        description: "Failed to send the email. Try again later.",
+        variant: "destructive"
       });
-      setFormData({ name: "", email: "", message: "" });
-      setIsSubmitting(false);
-    }, 1500);
-    
-    // For actual email sending, you would implement a fetch or axios call to your backend
+    }
+
+    setIsSubmitting(false);
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

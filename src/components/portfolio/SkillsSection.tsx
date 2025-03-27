@@ -1,16 +1,17 @@
 
 import React from "react";
+import { Code, Server, Globe, Database, Cpu, Terminal, Laptop, CloudCog } from "lucide-react";
 
-// Skills data
+// Skills data with icons
 const skills = [
-  { name: "JavaScript", level: 90 },
-  { name: "React", level: 85 },
-  { name: "Node.js", level: 80 },
-  { name: "TypeScript", level: 75 },
-  { name: "HTML/CSS", level: 90 },
-  { name: "PostgreSQL", level: 70 },
-  { name: "Python", level: 65 },
-  { name: "AWS", level: 60 },
+  { name: "JavaScript", icon: <Code className="h-6 w-6 text-yellow-400" /> },
+  { name: "React", icon: <Globe className="h-6 w-6 text-blue-400" /> },
+  { name: "Node.js", icon: <Server className="h-6 w-6 text-green-400" /> },
+  { name: "TypeScript", icon: <Code className="h-6 w-6 text-blue-600" /> },
+  { name: "HTML/CSS", icon: <Laptop className="h-6 w-6 text-orange-400" /> },
+  { name: "PostgreSQL", icon: <Database className="h-6 w-6 text-blue-300" /> },
+  { name: "Python", icon: <Terminal className="h-6 w-6 text-yellow-300" /> },
+  { name: "AWS", icon: <CloudCog className="h-6 w-6 text-orange-300" /> },
 ];
 
 const SkillsSection = () => {
@@ -18,21 +19,15 @@ const SkillsSection = () => {
     <section id="skills" className="py-20 relative">
       <div className="container mx-auto px-4 z-10">
         <h2 className="text-3xl md:text-5xl font-bold mb-12 text-center reveal">
-          <span className="bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">My Skills</span>
+          <span className="bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">My Skills ✨</span>
         </h2>
         <div className="max-w-3xl mx-auto bg-purple-900/20 backdrop-blur-sm p-8 rounded-xl border border-purple-500/20 reveal">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {skills.map((skill, index) => (
-              <div key={index} className="group">
-                <div className="flex justify-between mb-1">
-                  <span className="text-white">{skill.name}</span>
-                  <span className="text-gray-300">{skill.level}%</span>
-                </div>
-                <div className="w-full bg-purple-900/50 rounded-full h-2.5">
-                  <div 
-                    className="bg-gradient-to-r from-violet-500 to-fuchsia-500 h-2.5 rounded-full"
-                    style={{ width: `${skill.level}%` }}
-                  ></div>
+              <div key={index} className="group text-center p-4 hover:bg-purple-800/30 rounded-lg transition-colors duration-300">
+                <div className="flex flex-col items-center">
+                  <div className="mb-3 p-3 bg-purple-900/40 rounded-full">{skill.icon}</div>
+                  <span className="text-white font-medium">{skill.name}</span>
                 </div>
               </div>
             ))}

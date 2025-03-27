@@ -45,7 +45,7 @@ const ProjectsSection = () => {
     <section id="projects" className="py-20 relative">
       <div className="container mx-auto px-4 z-10">
         <h2 className="text-3xl md:text-5xl font-bold mb-12 text-center reveal">
-          <span className="bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">My Projects</span>
+          <span className="bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">My Projects 🚀</span>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
@@ -70,12 +70,20 @@ const ProjectsSection = () => {
               </CardContent>
               <CardFooter className="flex justify-between">
                 <a href={project.demoLink} target="_blank" rel="noopener noreferrer">
-                  <Button variant="outline" size="sm" className="border-purple-500 text-white hover:bg-purple-800">
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="border-purple-500 bg-purple-900/40 text-white hover:bg-purple-800"
+                  >
                     <ExternalLink size={16} className="mr-2" /> Live Demo
                   </Button>
                 </a>
                 <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
-                  <Button variant="outline" size="sm" className="border-purple-500 text-white hover:bg-purple-800">
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="border-purple-500 bg-purple-900/40 text-white hover:bg-purple-800"
+                  >
                     <Code size={16} className="mr-2" /> Code
                   </Button>
                 </a>

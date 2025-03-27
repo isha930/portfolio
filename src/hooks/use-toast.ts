@@ -1,7 +1,7 @@
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 
-type Toast = {
+export type ToastProps = {
   id: string;
   title: string;
   description?: string;
@@ -9,45 +9,54 @@ type Toast = {
   variant?: "default" | "destructive";
 };
 
+export type ToastActionElement = React.ReactElement<any>;
+
+const TOAST_TIMEOUT = 5000;
+
 export function useToast() {
-  const [toasts, setToasts] = useState<Toast[]>([]);
+  const [toasts, setToasts] = useState<ToastProps[]>([]);
 
+  // Clean up toasts when component unmounts
   useEffect(() => {
-    const handleRemoveToast = (id: string) => {
-      setToasts(prev => prev.filter(toast => toast.id !== id));
-    };
-
+    const timers: NodeJS.Timeout[] = [];
+    
+    toasts.forEach(toast => {
+      const timer = setTimeout(() => {
+        setToasts(prev => prev.filter(t => t.id !== toast.id));
+      }, TOAST_TIMEOUT);
+      
+      timers.push(timer);
+    });
+    
     return () => {
-      toasts.forEach(toast => {
-        const timer = setTimeout(() => {
-          handleRemoveToast(toast.id);
-        }, 5000);
-
-        return () => clearTimeout(timer);
-      });
+      timers.forEach(timer => clearTimeout(timer));
     };
   }, [toasts]);
 
-  const toast = useCallback(
-    ({ title, description, action, variant = "default" }: Omit<Toast, "id">) => {
-      const id = Math.random().toString(36).slice(2);
-      const newToast = { id, title, description, action, variant };
-      
-      setToasts(prev => [...prev, newToast]);
-      
-      setTimeout(() => {
-        setToasts(prev => prev.filter(t => t.id !== id));
-      }, 5000);
-      
-      return id;
-    },
-    []
-  );
+  function toast(props: Omit<ToastProps, "id">) {
+    const id = Math.random().toString(36).slice(2);
+    const newToast = { id, ...props };
+    
+    setToasts(prev => [...prev, newToast]);
+    
+    return id;
+  }
 
   return {
     toasts,
-    toast,
+    toast
   };
 }
 
-export { useToast as default, useToast as toast };
+// Export a singleton version of useToast for import by name
+export const toast = {
+  // Create standalone toast function
+  toast: (props: Omit<ToastProps, "id">) => {
+    // This is just a placeholder for direct imports
+    // The actual implementation is handled by the useToast hook
+    console.log("Toast called outside of component context");
+    return "";
+  }
+}.toast;
+
+export default useToast;

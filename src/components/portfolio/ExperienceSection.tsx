@@ -114,40 +114,41 @@ const ExperienceSection = () => {
         </div>
 
         {/* ===================== EDUCATION ===================== */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-purple-900/20 backdrop-blur-sm p-8 rounded-xl border border-purple-500/20 reveal">
-            <div className="flex items-center mb-6">
-              <GraduationCap className="text-fuchsia-400 mr-3" />
-              <h3 className="text-2xl font-bold">Education</h3>
-            </div>
+<div className="mb-12 bg-purple-900/20 backdrop-blur-sm p-8 rounded-xl border border-purple-500/20 reveal">
+  <div className="flex items-center mb-6">
+    <GraduationCap className="text-fuchsia-400 mr-3" />
+    <h3 className="text-2xl font-bold">Education</h3>
+  </div>
 
-            {education.map((item, index) => (
-              <div
-                key={index}
-                className={`mb-6 ${
-                  index !== education.length - 1
-                    ? "border-b border-purple-500/20 pb-6"
-                    : ""
-                }`}
-              >
-                <h4 className="text-xl font-semibold text-white">
-                  {item.degree}
-                </h4>
+  {education.map((item, index) => (
+    <div
+      key={index}
+      className={`mb-6 ${
+        index !== education.length - 1
+          ? "border-b border-purple-500/20 pb-6"
+          : ""
+      }`}
+    >
+      <h4 className="text-xl font-semibold text-white">
+        {item.degree}
+      </h4>
 
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-fuchsia-400">
-                    {item.institution}
-                  </span>
-                  <span className="text-gray-400 text-sm">
-                    {item.period}
-                  </span>
-                </div>
+      <div className="flex justify-between items-center mb-2">
+        <span className="text-fuchsia-400">
+          {item.institution}
+        </span>
+        <span className="text-gray-400 text-sm">
+          {item.period}
+        </span>
+      </div>
 
-                <p className="text-gray-300">{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+      <p className="text-gray-300">
+        {item.description}
+      </p>
+    </div>
+  ))}
+</div>
+
 
         {/* ===================== LEADERSHIP ===================== */}
         <div className="mt-12 bg-purple-900/20 backdrop-blur-sm p-8 rounded-xl border border-purple-500/20 reveal">

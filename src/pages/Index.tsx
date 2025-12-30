@@ -26,7 +26,7 @@ return (
     <Navbar />
 
     {/* MAIN CONTENT */}
-    <div className="space-y-16">
+    <div className="space-y-5">
       <HeroSection />
       <AboutSection />
       <ExperienceSection />

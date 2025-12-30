@@ -20,19 +20,25 @@ const Index = () => {
   // Initialize scroll animations
   useScrollAnimation();
 
-  return (
-    <div className="relative min-h-screen bg-gradient-to-b from-black via-purple-950 to-indigo-950 text-white">
-      <Background3D isMobile={isMobile} />
-      <Navbar />
+return (
+  <div className="relative min-h-screen bg-gradient-to-b from-black via-purple-950 to-indigo-950 text-white">
+    <Background3D isMobile={isMobile} />
+    <Navbar />
+
+    {/* MAIN CONTENT */}
+    <div className="space-y-16">
       <HeroSection />
       <AboutSection />
+      <ExperienceSection />
       <ProjectsSection />
       <SkillsSection />
-      <ExperienceSection />
       <ContactSection />
-      <Footer />
     </div>
-  );
+
+    <Footer />
+  </div>
+);
+
 };
 
 export default Index;

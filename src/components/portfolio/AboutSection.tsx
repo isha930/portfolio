@@ -10,9 +10,6 @@ const AboutSection = () => {
         </h2>
         <div className="max-w-3xl mx-auto bg-purple-900/20 backdrop-blur-sm p-8 rounded-xl border border-purple-500/20">
           <p className="text-lg mb-6">
-            Oh, you know, just the usual—building and scaling full-stack applications, optimizing real-time systems, and integrating AI like a pro. 🚀 From handling 1,000+ concurrent users in a code editor to designing ultra-responsive APIs, I focus on performance, scalability, and seamless UX. 💻
-          </p>
-          <p className="text-lg mb-6">
             I consider myself a code-poet who writes elegant solutions by day and debugs mysterious errors by night. ☕ When I'm not staring at a screen wondering why my code works (or doesn't), I'm probably exploring new technologies or explaining to my friends why tabs are superior to spaces. 🤓
           </p>
           <p className="text-lg">

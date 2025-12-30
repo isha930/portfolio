@@ -12,9 +12,10 @@ const Navbar = () => {
         <div className="hidden md:flex space-x-6">
           <a href="#about" className="hover:text-fuchsia-400 transition-colors">About</a>
           <a href="#projects" className="hover:text-fuchsia-400 transition-colors">Projects</a>
-          <a href="#skills" className="hover:text-fuchsia-400 transition-colors">Skills</a>
           <a href="#experience" className="hover:text-fuchsia-400 transition-colors">Experience</a>
+          <a href="#skills" className="hover:text-fuchsia-400 transition-colors">Skills</a>
           <a href="#contact" className="hover:text-fuchsia-400 transition-colors">Contact</a>
+          
         </div>
         <div className="flex space-x-4">
           <a href="https://www.linkedin.com/in/isha-durge-929b75278/" target="_blank" rel="noopener noreferrer" className="hover:text-fuchsia-400 transition-colors">
